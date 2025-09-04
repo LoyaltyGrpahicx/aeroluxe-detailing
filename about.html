@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aeroluxe Detailing</title>
+    <meta name="description" content="Learn about Aeroluxe Detailing - our story, mission, and the team behind our premium aircraft detailing services.">
+    <meta name="keywords" content="about aeroluxe, aircraft detailing team, our story, aviation experts">
+    
+    <!-- CSS -->
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C69E59',
+                        dark: '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('Gallery/1705p_t_clean4_16x9.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4rem;
+            background-attachment: fixed;
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(198, 158, 89, 0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C69E59;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full bg-black/90 backdrop-blur-sm z-50 transition-all duration-500 py-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105">
+                    <div class="flex items-center space-x-3">
+                        <img src="/Logo.png" alt="Aeroluxe Detailing" class="h-12 w-auto transition-all duration-300 group-hover:rotate-6">
+                        <div class="flex flex-col leading-tight">
+                            <span class="text-2xl font-bold bg-gradient-to-r from-gold via-amber-300 to-gold bg-clip-text text-transparent">Aeroluxe</span>
+                            <span class="text-xs font-medium text-gray-400 tracking-widest">DETAILING</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link text-sm font-medium text-gray-300 hover:text-gold px-4 py-2 rounded-lg transition-all duration-300 relative group">
+                        <i class="fas fa-home w-5 text-center mr-2 text-gold group-hover:animate-pulse"></i>
+                        <span>Home</span>
+                        <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-4/5 group-hover:left-1/2 group-hover:-translate-x-1/2"></span>
+                    </a>
+                    <a href="services.html" class="nav-link text-sm font-medium text-gray-300 hover:text-gold px-4 py-2 rounded-lg transition-all duration-300 relative group">
+                        <i class="fas fa-tools w-5 text-center mr-2 text-gold group-hover:animate-pulse"></i>
+                        <span>Services</span>
+                        <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-4/5 group-hover:left-1/2 group-hover:-translate-x-1/2"></span>
+                    </a>
+                    <a href="about.html" class="nav-link text-sm font-medium text-gold px-4 py-2 rounded-lg transition-all duration-300 relative group">
+                        <i class="fas fa-info-circle w-5 text-center mr-2 text-gold group-hover:animate-pulse"></i>
+                        <span>About Us</span>
+                        <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-4/5 group-hover:left-1/2 group-hover:-translate-x-1/2"></span>
+                    </a>
+                    <a href="contact.html" class="ml-4 px-6 py-2.5 bg-gradient-to-r from-gold to-amber-500 text-black font-medium text-sm leading-tight rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fas fa-paper-plane mr-2"></i>Get a Quote
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gold hover:text-white focus:outline-none transition-colors duration-300" aria-label="Toggle menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-lg py-4 px-6 absolute top-full left-0 right-0 shadow-xl border-t border-gray-800 transition-all duration-300 transform -translate-y-4 opacity-0">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="nav-link text-lg font-medium text-gray-300 hover:text-gold px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800/50">
+                        <i class="fas fa-home w-6 text-center mr-3 text-gold"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="services.html" class="nav-link text-lg font-medium text-gray-300 hover:text-gold px-4 py-3 rounded-lg transition-all duration-300 hover:bg-gray-800/50">
+                        <i class="fas fa-tools w-6 text-center mr-3 text-gold"></i>
+                        <span>Our Services</span>
+                    </a>
+                    <a href="about.html" class="nav-link text-lg font-medium text-gold px-4 py-3 rounded-lg transition-all duration-300 bg-gray-800/50">
+                        <i class="fas fa-info-circle w-6 text-center mr-3 text-gold"></i>
+                        <span>About Us</span>
+                    </a>
+                    <a href="contact.html" class="mt-2 text-center px-6 py-3 bg-gradient-to-r from-gold to-amber-500 text-black font-medium text-lg leading-tight rounded-lg hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="about-hero flex items-center justify-center text-center px-4 pt-24">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold text-gold mb-4">About Us</h1>
+            <p class="text-xl text-gray-300">Excellence in aircraft detailing since 2010</p>
+        </div>
+    </header>
+
+    <!-- Our Story -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gold mb-6">Our Story</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    Founded in 2010, Aeroluxe Detailing began with a simple mission: to provide the highest quality aircraft detailing services in the industry. What started as a small team of passionate aviation enthusiasts has grown into a premier detailing service trusted by private jet owners and fleet operators worldwide.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Our journey has been guided by an unwavering commitment to excellence, attention to detail, and a deep respect for the engineering marvels we have the privilege to work on. Every aircraft that comes through our facility receives the same level of care and precision, whether it's a vintage classic or the latest business jet.
+                </p>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="bg-gray-900 p-8 md:p-12 rounded-lg border border-gold border-opacity-20 mb-16">
+                <div class="text-center">
+                    <i class="fas fa-quote-left text-4xl text-gold opacity-50 mb-6"></i>
+                    <p class="text-2xl md:text-3xl font-light italic text-gray-200 mb-8">
+                        To redefine aircraft detailing through innovation, precision, and an uncompromising commitment to quality, ensuring every aircraft we touch achieves its maximum aesthetic and protective potential.
+                    </p>
+                    <div class="w-16 h-1 bg-gold mx-auto my-6"></div>
+                    <p class="text-gold font-semibold">Our Mission</p>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gold mb-12">Our Core Values</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800">
+                        <div class="text-gold text-3xl mb-4">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gold mb-3">Excellence</h3>
+                        <p class="text-gray-400">We pursue perfection in every detail, setting the industry standard for quality and precision in aircraft detailing.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800">
+                        <div class="text-gold text-3xl mb-4">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gold mb-3">Integrity</h3>
+                        <p class="text-gray-400">We conduct our business with honesty, transparency, and respect for our clients and their valuable aircraft.</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800">
+                        <div class="text-gold text-3xl mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gold mb-3">Innovation</h3>
+                        <p class="text-gray-400">We continuously explore and implement the latest techniques and technologies in aircraft care and protection.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gold mb-12">Our Team</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                        <div class="h-48 bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-6xl text-gold opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gold">Michael Reynolds</h3>
+                            <p class="text-gray-400 text-sm mb-4">Founder & CEO</p>
+                            <p class="text-gray-300 text-sm">With over 20 years in aviation maintenance, Michael's expertise ensures the highest standards in every detail.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                        <div class="h-48 bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-6xl text-gold opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gold">Sarah Chen</h3>
+                            <p class="text-gray-400 text-sm mb-4">Head of Detailing</p>
+                            <p class="text-gray-300 text-sm">Sarah's meticulous attention to detail and perfectionism make her an invaluable leader of our detailing team.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="team-card bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
+                        <div class="h-48 bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-6xl text-gold opacity-50"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gold">David Rodriguez</h3>
+                            <p class="text-gray-400 text-sm mb-4">Customer Relations</p>
+                            <p class="text-gray-300 text-sm">David ensures every client receives personalized service and complete satisfaction with our work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us -->
+            <div class="bg-gray-900 p-8 md:p-12 rounded-lg border border-gold border-opacity-20">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gold mb-8">Why Choose Aeroluxe Detailing?</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Certified Specialists</h3>
+                            <p class="text-gray-400">Our team consists of certified professionals with extensive training in aircraft detailing and protection.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Premium Products</h3>
+                            <p class="text-gray-400">We use only the highest quality, aviation-approved products that are safe for all aircraft surfaces.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Attention to Detail</h3>
+                            <p class="text-gray-400">We're passionate about the little things that make a big difference in your aircraft's appearance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-gold text-xl mr-4 mt-1">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Customer Satisfaction</h3>
+                            <p class="text-gray-400">Your satisfaction is our top priority. We stand behind our work with a comprehensive satisfaction guarantee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gold mb-6">Experience the Aeroluxe Difference</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Join our growing list of satisfied clients who trust us with their most valuable aircraft.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="services.html" class="inline-block border-2 border-gold text-gold font-semibold px-8 py-3 rounded hover:bg-gold hover:text-black transition duration-300">
+                    Our Services
+                </a>
+                <a href="contact.html" class="inline-block bg-gold text-black font-semibold px-8 py-3 rounded hover:bg-opacity-90 transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-gold text-xl font-semibold mb-4">Aeroluxe Detailing</h3>
+                    <p class="text-gray-400">Polishing Perfection at Altitude. Delivering exceptional aircraft detailing services with unmatched attention to detail.</p>
+                </div>
+                <div>
+                    <h3 class="text-gold text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-gold transition">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-gold transition">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-gold transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-gold text-xl font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone-alt text-gold mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope text-gold mr-2"></i> info@aeroluxedetailing.com</li>
+                        <li><i class="fas fa-map-marker-alt text-gold mr-2"></i> 123 Aviation Way, Suite 100<br>Los Angeles, CA 90045</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Aeroluxe Detailing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle with smooth animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                const icon = menuButton.querySelector('i');
+                
+                if (isMenuOpen) {
+                    // Show menu with animation
+                    mobileMenu.classList.remove('hidden');
+                    // Trigger reflow to ensure the element is in the DOM
+                    void mobileMenu.offsetWidth;
+                    // Add classes for the open animation
+                    mobileMenu.classList.remove('opacity-0', '-translate-y-4');
+                    mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                    // Change icon to X
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    // Prevent body scroll when menu is open
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Start close animation
+                    mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                    mobileMenu.classList.add('opacity-0', '-translate-y-4');
+                    // Change icon to bars
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    // Re-enable body scroll after animation
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }, 300); // Match this with your CSS transition duration
+                }
+            }
+
+            // Toggle menu on button click
+            menuButton.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking on a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && 
+                    !mobileMenu.contains(e.target) && 
+                    !menuButton.contains(e.target)) {
+                    toggleMenu();
+                }
+            });
+
+            // Handle window resize
+            function handleResize() {
+                if (window.innerWidth >= 768 && isMenuOpen) {
+                    toggleMenu(); // Close menu when resizing to desktop
+                }
+            }
+            
+            window.addEventListener('resize', handleResize);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Text size adjustment with cross-browser support */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Focus styles for better accessibility */
+  *:focus {
+    outline: 2px solid theme('colors.gold');
+    outline-offset: 2px;
+  }
+  
+  /* Print styles */
+  @media print {
+    html, body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
+
+/* Custom styles */
+@layer components {
+    .nav-link {
+        @apply relative transition-colors duration-300;
+    }
+    .nav-link:hover {
+        @apply text-gold;
+    }
+    .btn-primary {
+        @apply bg-gradient-to-r from-gold to-amber-500 text-black font-medium py-2.5 px-6 rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 transform hover:-translate-y-0.5;
+    }
+    .btn-secondary {
+        @apply border-2 border-gold text-gold font-medium py-2.5 px-6 rounded-full hover:bg-gold/10 transition-all duration-300;
+    }
+    
+    /* Background image with correct path */
+    .bg-aircraft-detail {
+        background-image: url('../Gallery/exterior-aircraft-detailing-004.webp');
+    }
+}
