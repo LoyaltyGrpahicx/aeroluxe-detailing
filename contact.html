@@ -107,6 +107,7 @@
                 <div class="contact-card bg-gray-900 p-8 rounded-lg border border-gold border-opacity-20">
                     <h2 class="text-3xl font-bold text-gold mb-8">Send Us a Message</h2>
                     <form id="contactForm" class="space-y-6">
+                        
                         <div>
                             <label for="name" class="block text-gray-300 mb-2">Full Name <span class="text-gold">*</span></label>
                             <input type="text" id="name" name="name" required 
@@ -144,6 +145,7 @@
                                     class="w-full bg-gold text-black font-semibold px-8 py-3 rounded hover:bg-opacity-90 transition duration-300">
                                 Send Message
                             </button>
+                            <p class="text-sm text-gray-500 mt-2">By submitting this form, you agree to our <a href="#" class="text-gold hover:underline">privacy policy</a>.</p>
                         </div>
                     </form>
                     <div id="formSuccess" class="hidden mt-6 p-4 bg-green-900 bg-opacity-30 border border-green-500 text-green-300 rounded">
@@ -186,7 +188,6 @@
                                 <div>
                                     <h3 class="text-lg font-semibold text-white mb-1">Email</h3>
                                     <p class="text-gray-400">info@aerolux-detailing.com</p>
-                                    <p class="text-gray-400">www.aeroluxe-detailing.com</p>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +243,7 @@
                     <div class="text-center p-8">
                         <i class="fas fa-map-marked-alt text-5xl text-gold mb-4"></i>
                         <h3 class="text-2xl font-semibold text-gold mb-2">Our Location</h3>
-                        <p class="text-gray-400 mb-4">123 Aviation Way, Suite 100<br>Los Angeles, CA 90045</p>
+                        <p class="text-gray-400 mb-4">8201 Lockheed Suite 100-F<br>El Paso, TX 79925</p>
                         <a href="https://maps.google.com" target="_blank" class="inline-block border border-gold text-gold font-semibold px-6 py-2 rounded hover:bg-gold hover:text-black transition duration-300">
                             Get Directions
                         </a>
@@ -345,7 +346,6 @@
                     <ul class="space-y-2 text-gray-400">
                         <li><i class="fas fa-phone-alt text-gold mr-2"></i> (915) 229-1161</li>
                         <li><i class="fas fa-envelope text-gold mr-2"></i> info@aerolux-detailing.com</li>
-                        <li><i class="fas fa-globe text-gold mr-2"></i> www.aeroluxe-detailing.com</li>
                         <li><i class="fas fa-map-marker-alt text-gold mr-2"></i> 8201 Lockheed Suite 100-F<br>El Paso, TX 79925</li>
                     </ul>
                 </div>
@@ -357,9 +357,41 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Contact Form Submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('formSuccess');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Here you would typically send the form data to a server
+                    // For now, we'll just show the success message
+                    
+                    // Hide the form
+                    contactForm.style.display = 'none';
+                    
+                    // Show success message
+                    successMessage.classList.remove('hidden');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Optional: Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Optional: Hide success message after 10 seconds and show form again
+                    setTimeout(function() {
+                        successMessage.classList.add('hidden');
+                        contactForm.style.display = 'block';
+                    }, 10000);
+                });
+            }
+            
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
         
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
