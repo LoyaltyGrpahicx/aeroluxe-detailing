@@ -346,7 +346,7 @@
                     <h3 class="text-gold text-xl font-semibold mb-4">Contact Info</h3>
                     <ul class="space-y-2 text-gray-400">
                         <li><i class="fas fa-phone-alt text-gold mr-2"></i> (915) 229-1161</li>
-                        <li><i class="fas fa-envelope text-gold mr-2"></i> info@aerolux-detailing.com</li>
+                        <li><i class="fas fa-envelope text-gold mr-2"></i>  info@aeroluxe-detailing.com</li>
                         <li><i class="fas fa-map-marker-alt text-gold mr-2"></i> 8201 Lockheed Suite 100-F<br>El Paso, TX 79925</li>
                     </ul>
                 </div>
@@ -363,7 +363,7 @@
             const contactForm = document.getElementById('contactForm');
             const successMessage = document.getElementById('formSuccess');
             
-            if (contactForm) {
+            if (contactForm && successMessage) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
@@ -393,16 +393,19 @@
             // Mobile menu toggle
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
             }
         });
 
