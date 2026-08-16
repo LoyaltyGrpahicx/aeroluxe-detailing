@@ -35,7 +35,8 @@ module.exports = {
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'float-reverse': 'float 8s ease-in-out infinite reverse',
+        'float-slow': 'float 9s ease-in-out infinite',
+        'float-medium': 'float 7s ease-in-out infinite reverse',
         'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {

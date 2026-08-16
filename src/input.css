@@ -4,54 +4,64 @@
 
 @layer base {
   html {
-    /* Text size adjustment with cross-browser support */
     -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    
-    /* Smooth scrolling */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    
-    /* Font rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
   }
-  
-  /* Focus styles for better accessibility */
-  *:focus {
+
+  body {
+    @apply bg-dark text-gray-200 font-sans overflow-x-hidden;
+  }
+
+  *:focus-visible {
     outline: 2px solid theme('colors.gold');
     outline-offset: 2px;
   }
-  
-  /* Print styles */
-  @media print {
-    html, body {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-sm font-medium text-gray-300 hover:text-gold px-3 py-2 transition-colors duration-300;
+  }
+
+  .nav-link.active {
+    @apply text-white;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold to-amber-500 text-black font-semibold px-7 py-3 rounded-full hover:shadow-gold transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-gold text-gold font-semibold px-7 py-3 rounded-full hover:bg-gold/10 transition-all duration-300;
+  }
+
+  .section-kicker {
+    @apply text-gold text-xs font-semibold tracking-[0.25em] uppercase;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold text-white mt-3 mb-4;
+  }
+
+  .gold-rule {
+    @apply w-16 h-0.5 bg-gold mx-auto my-6;
+  }
+
+  .card-surface {
+    @apply bg-gray-900/80 border border-gold/20 rounded-2xl;
+  }
+
+  .page-hero {
+    @apply relative min-h-[48vh] flex items-center justify-center text-center px-4 pt-28 pb-16;
   }
 }
 
-/* Custom styles */
-@layer components {
-    .nav-link {
-        @apply relative transition-colors duration-300;
-    }
-    .nav-link:hover {
-        @apply text-gold;
-    }
-    .btn-primary {
-        @apply bg-gradient-to-r from-gold to-amber-500 text-black font-medium py-2.5 px-6 rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 transform hover:-translate-y-0.5;
-    }
-    .btn-secondary {
-        @apply border-2 border-gold text-gold font-medium py-2.5 px-6 rounded-full hover:bg-gold/10 transition-all duration-300;
-    }
-    
-    /* Background image with correct path */
-    .bg-aircraft-detail {
-        background-image: url('../Gallery/exterior-aircraft-detailing-004.webp');
-    }
+@layer utilities {
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-amber-300 to-gold;
+  }
 }

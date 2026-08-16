@@ -4,533 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Aeroluxe Detailing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Request an aircraft detailing quote. Aeroluxe Detailing, Horizon City, TX. (833) 928-6211.">
+    <link rel="icon" type="image/png" href="Logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#C69E59',
-                        dark: '#000000',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        .contact-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1556388154-761108d4a3d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 50vh;
-        }
-        .contact-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(198, 158, 89, 0.2);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #C69E59;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        input:focus, textarea:focus, select:focus {
-            border-color: #C69E59 !important;
-            box-shadow: 0 0 0 1px #C69E59 !important;
-        }
-    </style>
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/custom.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white font-sans">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-black bg-opacity-90 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-gold text-2xl font-bold">Aeroluxe Detailing</a>
-            
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-gold focus:outline-none" aria-label="Toggle navigation menu">
+<body>
+    <button type="button" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <nav class="navbar fixed w-full bg-black/90 backdrop-blur-sm z-50 py-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="Logo.png" alt="Aeroluxe Detailing" class="h-12 w-auto">
+                    <span class="flex flex-col leading-tight">
+                        <span class="text-2xl font-bold text-gold-gradient">Aeroluxe</span>
+                        <span class="text-xs font-medium text-gray-400 tracking-widest">DETAILING</span>
+                    </span>
+                </a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="btn-primary ml-3 text-sm py-2.5 px-6">Get a Quote</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gold" aria-label="Toggle menu">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link text-gray-400 hover:text-gold">Home</a>
-                <a href="services.html" class="nav-link text-gray-400 hover:text-gold">Services</a>
-                <a href="about.html" class="nav-link text-gray-400 hover:text-gold">About Us</a>
-                <a href="contact.html" class="nav-link text-gold hover:text-gold">Contact</a>
+            <div id="mobile-menu" class="hidden md:hidden mt-3 rounded-xl bg-black/95 border border-gray-800 p-4">
+                <a href="index.html" class="block py-3 text-gray-300">Home</a>
+                <a href="services.html" class="block py-3 text-gray-300">Services</a>
+                <a href="about.html" class="block py-3 text-gray-300">About</a>
+                <a href="contact.html" class="btn-primary w-full mt-2">Get a Quote</a>
             </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-95 py-4 px-6">
-            <a href="index.html" class="block py-2 text-gray-400 hover:text-gold">Home</a>
-            <a href="services.html" class="block py-2 text-gray-400 hover:text-gold">Services</a>
-            <a href="about.html" class="block py-2 text-gray-400 hover:text-gold">About Us</a>
-            <a href="contact.html" class="block py-2 text-gold hover:text-white">Contact</a>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="contact-hero flex items-center justify-center text-center px-4 pt-24">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-bold text-gold mb-4">Get In Touch</h1>
-            <p class="text-xl text-gray-300">We'd love to hear from you. Contact us today to schedule a consultation.</p>
+    <header class="page-hero">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('Gallery/exterior-aircraft-detailing-004.webp');"></div>
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <p class="section-kicker mb-3">Contact</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-gold mb-4">Request a quote</h1>
+            <p class="text-lg text-gray-300">Share the aircraft and the work you need. We typically reply within one business day.</p>
         </div>
     </header>
 
-    <!-- Contact Section -->
     <section class="py-20 px-4">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="contact-card bg-gray-900 p-8 rounded-lg border border-gold border-opacity-20">
-                    <h2 class="text-3xl font-bold text-gold mb-8">Send Us a Message</h2>
-                    <form id="contactForm" name="contact" method="POST" data-netlify="true" class="space-y-6" netlify>
-                        <input type="hidden" name="form-name" value="contact">
-                        
-                        <div class="relative">
-                            <label for="name" class="block text-gray-300 mb-2">Full Name <span class="text-gold">*</span></label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-gold transition duration-200"
-                                   placeholder="John Doe">
-                            <div class="text-red-500 text-sm mt-1 hidden" id="name-error">Please enter your full name</div>
-                        </div>
-                        
-                        <div class="relative">
-                            <label for="email" class="block text-gray-300 mb-2">Email Address <span class="text-gold">*</span></label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-gold transition duration-200"
-                                   placeholder="your.email@example.com">
-                            <div class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email address</div>
-                        </div>
-                        
-                        <div class="relative">
-                            <label for="phone" class="block text-gray-300 mb-2">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" 
-                                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-gold transition duration-200"
-                                   placeholder="(833) 928-6211">
-                            <div class="text-gray-500 text-xs mt-1">Optional but recommended for faster response</div>
-                        </div>
-                        
-                        <div class="relative">
-                            <label for="service" class="block text-gray-300 mb-2">Service of Interest</label>
-                            <div class="relative">
-                                <select id="service" name="service" 
-                                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-gold text-gray-300 appearance-none">
-                                    <option value="">Select a service</option>
-                                    <option value="exterior">Exterior Polishing & Waxing</option>
-                                    <option value="interior">Interior Cabin Detailing</option>
-                                    <option value="disinfection">Disinfection & Sanitization</option>
-                                    <option value="ceramic">Paint Protection & Ceramic Coating</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                    <i class="fas fa-chevron-down text-gray-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="relative">
-                            <label for="message" class="block text-gray-300 mb-2">Your Message <span class="text-gold">*</span></label>
-                            <textarea id="message" name="message" rows="5" required 
-                                      class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-1 focus:ring-gold transition duration-200 resize-none"
-                                      placeholder="Tell us about your aircraft and how we can help..."></textarea>
-                            <div class="text-red-500 text-sm mt-1 hidden" id="message-error">Please enter your message</div>
-                        </div>
-                        
-                        <div class="pt-2">
-                            <button type="submit" 
-                                    class="w-full bg-gold text-black font-semibold px-8 py-4 rounded hover:bg-opacity-90 transition duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-2">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Send Message</span>
-                            </button>
-                            <p class="text-sm text-gray-500 mt-3 text-center">
-                                <span class="inline-flex items-center">
-                                    <i class="fas fa-lock text-gold mr-1"></i>
-                                    <span>Your information is secure. We'll never share your details.</span>
-                                </span>
-                                <br>
-                                <span class="text-xs">By submitting, you agree to our <a href="#" class="text-gold hover:underline">privacy policy</a>.</span>
-                            </p>
-                        </div>
-                    </form>
-                    
-                    <!-- Success Message (initially hidden) -->
-                    <div id="formSuccess" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 p-4 hidden">
-                        <div class="bg-gray-900 border-2 border-gold p-8 rounded-lg max-w-md w-full mx-4">
-                            <div class="text-5xl mb-4 text-center">
-                                <i class="fas fa-check-circle text-green-400"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-2 text-center text-white">Message Sent Successfully!</h3>
-                            <p class="text-green-200 mb-6 text-center">Thank you for contacting Aeroluxe Detailing. We'll get back to you within 24 hours.</p>
-                            <div class="w-full bg-gray-700 h-1.5 rounded-full overflow-hidden mt-4">
-                                <div class="bg-gold h-full progress-bar" style="width: 100%;"></div>
-                            </div>
-                        </div>
+        <div class="container mx-auto max-w-6xl grid md:grid-cols-2 gap-12">
+            <div class="card-surface p-8">
+                <h2 class="text-2xl font-bold text-gold mb-6">Send a message</h2>
+                <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-5">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="sr-only-honeypot">
+                        <label>Leave blank <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                    </p>
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2 text-sm">Full name <span class="text-gold">*</span></label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white" placeholder="Your name">
                     </div>
-                    
-                    <style>
-                        #formSuccess {
-                            opacity: 0;
-                            pointer-events: none;
-                            transition: opacity 0.3s ease-in-out;
-                        }
-                        #formSuccess:not(.hidden) {
-                            opacity: 1;
-                            pointer-events: auto;
-                            display: flex !important;
-                        }
-                        .progress-bar {
-                            animation: progress 10s linear forwards;
-                        }
-                        @keyframes progress {
-                            from { width: 100%; }
-                            to { width: 0%; }
-                        }
-                    </style>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2 text-sm">Email <span class="text-gold">*</span></label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-300 mb-2 text-sm">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white" placeholder="(833) 928-6211">
+                    </div>
+                    <div>
+                        <label for="aircraft" class="block text-gray-300 mb-2 text-sm">Aircraft type</label>
+                        <input type="text" id="aircraft" name="aircraft" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white" placeholder="e.g. Citation, King Air, Gulfstream">
+                    </div>
+                    <div>
+                        <label for="service" class="block text-gray-300 mb-2 text-sm">Service</label>
+                        <select id="service" name="service" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-300">
+                            <option value="">Select a service</option>
+                            <option value="exterior">Exterior polishing &amp; waxing</option>
+                            <option value="interior">Interior cabin detailing</option>
+                            <option value="disinfection">Disinfection &amp; sanitization</option>
+                            <option value="ceramic">Paint protection &amp; ceramic coating</option>
+                            <option value="other">Other / full package</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-2 text-sm">Message <span class="text-gold">*</span></label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white resize-none" placeholder="Location, timing, and what you want done."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full"><i class="fas fa-paper-plane"></i> Send message</button>
+                    <p class="text-xs text-gray-500 text-center">We use your details only to respond to this inquiry.</p>
+                </form>
+                <div id="formSuccess" class="hidden mt-6 p-4 rounded-lg border border-gold/40 bg-gold/10 text-center">
+                    <i class="fas fa-check-circle text-gold text-2xl mb-2"></i>
+                    <p class="text-white font-semibold">Message sent.</p>
+                    <p class="text-gray-300 text-sm">We will get back to you within one business day.</p>
                 </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <div class="mb-12">
-                        <h2 class="text-3xl font-bold text-gold mb-6">Contact Information</h2>
-                        <p class="text-gray-300 mb-8">We're here to answer any questions you may have about our services. Reach out to us and we'll respond as soon as we can.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="text-gold text-xl mt-1 mr-4">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white mb-1">Our Location</h3>
-                                    <p class="text-gray-400">8201 Lockheed Suite 100-F<br>El Paso, TX 79925</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-gold text-xl mt-1 mr-4">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white mb-1">Phone</h3>
-                                    <p class="text-gray-400">(833) 928-6211</p>
-                                    <p class="text-gray-400 text-sm mt-1">Monday - Friday: 8:00 AM - 6:00 PM CST</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="text-gold text-xl mt-1 mr-4">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white mb-1">Email</h3>
-                                    <p class="text-gray-400">info@aeroluxe-detailing.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Business Hours -->
-                    <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-                        <h3 class="text-xl font-semibold text-gold mb-4">Business Hours</h3>
-                        <ul class="space-y-2">
-                            <li class="flex justify-between border-b border-gray-800 pb-2">
-                                <span class="text-gray-300">Monday - Friday</span>
-                                <span class="text-gold">8:00 AM - 6:00 PM</span>
-                            </li>
-                            <li class="flex justify-between border-b border-gray-800 pb-2">
-                                <span class="text-gray-300">Saturday</span>
-                                <span class="text-gold">9:00 AM - 4:00 PM</span>
-                            </li>
-                            <li class="flex justify-between">
-                                <span class="text-gray-300">Sunday</span>
-                                <span class="text-gold">Closed</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold text-gold mb-4">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-gold transition">
-                                <i class="fab fa-facebook-f text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition">
-                                <i class="fab fa-twitter text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition">
-                                <i class="fab fa-instagram text-2xl"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-gold transition">
-                                <i class="fab fa-linkedin-in text-2xl"></i>
-                            </a>
-                        </div>
-                    </div>
+                <div id="formError" class="hidden mt-6 p-4 rounded-lg border border-red-500/40 bg-red-950/40 text-center">
+                    <p class="text-red-200 text-sm">The form could not be sent. Email <a class="underline" href="mailto:info@aeroluxe-detailing.com">info@aeroluxe-detailing.com</a> or call (833) 928-6211.</p>
                 </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold text-gold mb-6">Studio &amp; hangar</h2>
+                <ul class="space-y-6 mb-10">
+                    <li class="flex gap-4">
+                        <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                        <div>
+                            <h3 class="text-white font-semibold">Location</h3>
+                            <p class="text-gray-400">13845 Paseo De Miel Dr.<br>Horizon City, TX 79928</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <i class="fas fa-phone-alt text-gold mt-1"></i>
+                        <div>
+                            <h3 class="text-white font-semibold">Phone</h3>
+                            <p class="text-gray-400"><a href="tel:8339286211" class="hover:text-gold">(833) 928-6211</a></p>
+                            <p class="text-gray-500 text-sm">Monday – Friday, 8:00 AM – 6:00 PM CST</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <i class="fas fa-envelope text-gold mt-1"></i>
+                        <div>
+                            <h3 class="text-white font-semibold">Email</h3>
+                            <p class="text-gray-400"><a href="mailto:info@aeroluxe-detailing.com" class="hover:text-gold">info@aeroluxe-detailing.com</a></p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-surface p-6 mb-8">
+                    <h3 class="text-gold font-semibold mb-4">Hours</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-300">Monday – Friday</span><span class="text-gold">8:00 AM – 6:00 PM</span></li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-300">Saturday</span><span class="text-gold">9:00 AM – 4:00 PM</span></li>
+                        <li class="flex justify-between"><span class="text-gray-300">Sunday</span><span class="text-gold">Closed</span></li>
+                    </ul>
+                </div>
+                <iframe title="Map to Aeroluxe Detailing" class="w-full h-64 rounded-2xl border border-gray-800" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=13845%20Paseo%20De%20Miel%20Dr.%20Horizon%20City%20TX%2079928&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="px-4 pb-20">
-        <div class="container mx-auto">
-            <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-800">
-                <div class="h-96 bg-gray-800 flex items-center justify-center">
-                    <div class="text-center p-8">
-                        <i class="fas fa-map-marked-alt text-5xl text-gold mb-4"></i>
-                        <h3 class="text-2xl font-semibold text-gold mb-2">Our Location</h3>
-                        <p class="text-gray-400 mb-4">8201 Lockheed Suite 100-F<br>El Paso, TX 79925</p>
-                        <a href="https://maps.google.com" target="_blank" class="inline-block border border-gold text-gold font-semibold px-6 py-2 rounded hover:bg-gold hover:text-black transition duration-300">
-                            Get Directions
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
     <section class="py-20 px-4 bg-gray-900">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gold mb-12">Frequently Asked Questions</h2>
-            
-            <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-left py-4 focus:outline-none">
-                        <span class="text-lg font-medium text-white">How often should I have my aircraft detailed?</span>
-                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden pt-2 pb-4">
-                        <p class="text-gray-400">The frequency of detailing depends on several factors including how often you fly, environmental conditions, and your personal standards. As a general guideline, we recommend a full exterior and interior detail every 3-6 months, with touch-up services as needed in between.</p>
-                    </div>
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-gold mb-10">Questions</h2>
+            <div class="space-y-2">
+                <div class="border-b border-gray-800">
+                    <button type="button" class="faq-question w-full flex justify-between items-center text-left py-4 text-white font-medium">How often should an aircraft be detailed? <i class="fas fa-chevron-down text-gold transition-transform"></i></button>
+                    <div class="faq-answer hidden pb-4 text-gray-400 text-sm">It depends on flight hours and climate. A full interior and exterior detail every 3–6 months is a solid baseline, with wash and cabin touch-ups as needed.</div>
                 </div>
-                
-                <!-- FAQ Item 2 -->
-                <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-left py-4 focus:outline-none">
-                        <span class="text-lg font-medium text-white">How long does a typical detailing service take?</span>
-                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden pt-2 pb-4">
-                        <p class="text-gray-400">Service duration varies based on the size of your aircraft and the specific services requested. A basic exterior wash might take 2-3 hours, while a complete interior and exterior detail could take 8-12 hours or more. We'll provide a time estimate when you schedule your service.</p>
-                    </div>
+                <div class="border-b border-gray-800">
+                    <button type="button" class="faq-question w-full flex justify-between items-center text-left py-4 text-white font-medium">How long does a typical service take? <i class="fas fa-chevron-down text-gold transition-transform"></i></button>
+                    <div class="faq-answer hidden pb-4 text-gray-400 text-sm">A wash may take a few hours. A complete interior and exterior detail is often a full day or more, depending on airframe size. We confirm timing when you book.</div>
                 </div>
-                
-                <!-- FAQ Item 3 -->
-                <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-left py-4 focus:outline-none">
-                        <span class="text-lg font-medium text-white">What payment methods do you accept?</span>
-                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden pt-2 pb-4">
-                        <p class="text-gray-400">We accept all major credit cards (Visa, MasterCard, American Express, Discover), bank transfers, and company checks. Payment is due upon completion of service unless other arrangements have been made in advance.</p>
-                    </div>
+                <div class="border-b border-gray-800">
+                    <button type="button" class="faq-question w-full flex justify-between items-center text-left py-4 text-white font-medium">Do you offer mobile detailing? <i class="fas fa-chevron-down text-gold transition-transform"></i></button>
+                    <div class="faq-answer hidden pb-4 text-gray-400 text-sm">Yes, at most airports within about 50 miles of our Horizon City facility. Travel fees may apply beyond that radius.</div>
                 </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-left py-4 focus:outline-none">
-                        <span class="text-lg font-medium text-white">Do you offer mobile detailing services?</span>
-                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden pt-2 pb-4">
-                        <p class="text-gray-400">Yes, we offer mobile detailing services at most airports within a 50-mile radius of our main facility. Additional travel fees may apply for locations outside this area. Contact us to discuss your specific needs and location.</p>
-                    </div>
+                <div class="border-b border-gray-800">
+                    <button type="button" class="faq-question w-full flex justify-between items-center text-left py-4 text-white font-medium">What payment methods do you accept? <i class="fas fa-chevron-down text-gold transition-transform"></i></button>
+                    <div class="faq-answer hidden pb-4 text-gray-400 text-sm">Major cards, bank transfer, and company checks. Payment is due on completion unless we agree otherwise in advance.</div>
                 </div>
-                
-                <!-- FAQ Item 5 -->
-                <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-question w-full flex justify-between items-center text-left py-4 focus:outline-none">
-                        <span class="text-lg font-medium text-white">What safety measures do you take during the COVID-19 pandemic?</span>
-                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer hidden pt-2 pb-4">
-                        <p class="text-gray-400">We follow all CDC and local health guidelines to ensure the safety of our team and clients. This includes wearing masks, using hospital-grade disinfectants, practicing social distancing, and regularly sanitizing our equipment. We also offer contactless payment options and virtual consultations.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <p class="text-gray-400 mb-6">Still have questions? We're here to help!</p>
-                <a href="#contactForm" class="inline-block bg-gold text-black font-semibold px-8 py-3 rounded hover:bg-opacity-90 transition duration-300">
-                    Contact Us
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black py-12 px-4 border-t border-gray-800">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-gold text-xl font-semibold mb-4">Aeroluxe Detailing</h3>
-                    <p class="text-gray-400">Polishing Perfection at Altitude. Delivering exceptional aircraft detailing services with unmatched attention to detail.</p>
-                </div>
-                <div>
-                    <h3 class="text-gold text-xl font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-gold transition">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-gold transition">Services</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-gold transition">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-gold transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-gold text-xl font-semibold mb-4">Contact Info</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-phone-alt text-gold mr-2"></i> (833) 928-6211</li>
-                        <li><i class="fas fa-envelope text-gold mr-2"></i>  info@aeroluxe-detailing.com</li>
-                        <li><i class="fas fa-map-marker-alt text-gold mr-2"></i> 8201 Lockheed Suite 100-F<br>El Paso, TX 79925</li>
-                    </ul>
-                </div>
+    <footer class="bg-black py-14 px-4 border-t border-gray-800">
+        <div class="container mx-auto grid md:grid-cols-4 gap-10">
+            <div>
+                <h3 class="text-gold text-lg font-semibold mb-3">Aeroluxe Detailing</h3>
+                <p class="text-gray-400 text-sm">Polishing perfection at altitude. Aircraft detailing in Horizon City, Texas.</p>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 Aeroluxe Detailing. All rights reserved.</p>
+            <div>
+                <h3 class="text-gold text-lg font-semibold mb-3">Pages</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="text-gray-400 hover:text-gold">Home</a></li>
+                    <li><a href="services.html" class="text-gray-400 hover:text-gold">Services</a></li>
+                    <li><a href="about.html" class="text-gray-400 hover:text-gold">About</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-gold">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-gold text-lg font-semibold mb-3">Services</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>Exterior polishing</li>
+                    <li>Interior cabin care</li>
+                    <li>Sanitization</li>
+                    <li>Ceramic coating</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-gold text-lg font-semibold mb-3">Contact</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="tel:8339286211" class="hover:text-gold">(833) 928-6211</a></li>
+                    <li><a href="mailto:info@aeroluxe-detailing.com" class="hover:text-gold">info@aeroluxe-detailing.com</a></li>
+                    <li>13845 Paseo De Miel Dr.<br>Horizon City, TX 79928</li>
+                </ul>
             </div>
         </div>
+        <p class="text-center text-gray-500 text-sm mt-12 pt-8 border-t border-gray-800">&copy; 2026 Aeroluxe Detailing. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Contact Form Submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const successMessage = document.getElementById('formSuccess');
-            const formFields = contactForm.querySelectorAll('input, textarea, select');
-            
-            // Add validation styles on blur
-            formFields.forEach(field => {
-                field.addEventListener('blur', function() {
-                    if (this.checkValidity()) {
-                        this.classList.remove('border-red-500');
-                        this.classList.add('border-green-500');
-                    } else {
-                        this.classList.add('border-red-500');
-                        this.classList.remove('border-green-500');
-                    }
-                });
-            });
-            
-            if (contactForm && successMessage) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Validate form
-                    if (!contactForm.checkValidity()) {
-                        // Show validation errors
-                        contactForm.querySelectorAll(':invalid').forEach(field => {
-                            field.classList.add('border-red-500');
-                        });
-                        return false;
-                    }
-                    
-                    // Show loading state
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalBtnText = submitBtn.innerHTML;
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
-                    
-                    // Simulate form submission (for demo purposes)
-                    setTimeout(() => {
-                        // Show success message
-                        console.log('Form submitted, showing success message');
-                        contactForm.style.display = 'none';
-                        successMessage.classList.remove('hidden');
-                        
-                        // Reset progress bar animation
-                        const progressBar = document.querySelector('.progress-bar');
-                        if (progressBar) {
-                            progressBar.style.animation = 'none';
-                            void progressBar.offsetWidth; // Trigger reflow
-                            progressBar.style.animation = 'progress 10s linear forwards';
-                        }
-                        
-                        // Reset form state after delay
-                        setTimeout(() => {
-contactForm.reset();
-                            contactForm.style.display = 'block';
-                            successMessage.classList.add('hidden');
-                            
-                            // Re-enable button
-                            submitBtn.disabled = false;
-                            submitBtn.innerHTML = originalBtnText;
-                            
-                            // Remove validation styles
-                            formFields.forEach(field => {
-                                field.classList.remove('border-green-500', 'border-red-500');
-                            });
-                        }, 10000); // Hide success message after 10 seconds
-                    }, 1000); // Simulate network delay
-                });
-            }
-            
-            // Mobile menu toggle
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                    const icon = menuBtn.querySelector('i');
-                    if (mobileMenu.classList.contains('hidden')) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    } else {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                    }
-                });
-            }
-        });
-
-        // FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                // Toggle the answer
-                answer.classList.toggle('hidden');
-                
-                // Toggle the icon
-                icon.classList.toggle('transform');
-                icon.classList.toggle('rotate-180');
-                
-                // Close other open answers
-                faqQuestions.forEach(item => {
-                    if (item !== question) {
-                        item.nextElementSibling.classList.add('hidden');
-                        const itemIcon = item.querySelector('i');
-                        itemIcon.classList.remove('rotate-180');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
